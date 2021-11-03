@@ -1,0 +1,56 @@
+// colors light theme
+$primary: #0079ff;
+$primary-light: #60abff;
+$secondary: #697c9a;
+$tertiary: #4b6a9b;
+$contrast: #2b3442;
+
+$background: #f6f8ff;
+$background-light: #fefefe;
+
+$shadow: #4660bb33;
+
+// colors dark theme
+.dark {
+  $primary: #0079ff;
+  $secondary: #ffffff;
+  $tertiary: #141d2f;
+  $contrast: #1e2a47;
+
+  $background: #f6f8ff;
+  $background-light: #fefefe;
+}
+
+// fonts
+h1 {
+  font: bold 26px "Space Mono", monospace;
+  line-height: 38px;
+}
+
+h2 {
+  font: bold 22px "Space Mono", monospace;
+  line-height: 33px;
+}
+
+h3 {
+  font: 16px "Space Mono", monospace;
+  line-height: 24px;
+}
+
+h4 {
+  font: 13px "Space Mono", monospace;
+  line-height: 20px;
+}
+
+button {
+  font: bold 16px "Space Mono", monospace;
+  line-height: 24px;
+}
+
+body {
+  margin: 0px auto;
+  text-align: center;
+  background-color: $background;
+  font: 15px "Space Mono", monospace;
+  line-height: 25px;
+}
