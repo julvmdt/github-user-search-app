@@ -1,0 +1,76 @@
+@import "../index.scss";
+
+.result-card-container {
+  width: 682px;
+  height: 444px;
+  margin: 24px auto 145px auto;
+  padding: 48px;
+  border-radius: 15px;
+  background-color: $background-light;
+  box-shadow: 0px 16px 30px $shadow;
+}
+
+.result-card-content-container {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.result-card-title-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  .result-card-date-title {
+    color: $secondary;
+  }
+}
+
+h3 {
+  color: $primary;
+}
+
+p {
+  color: $tertiary;
+}
+
+.result-card-text-alignment {
+  text-align: left;
+}
+
+.result-card-github-info-container {
+  width: 448px;
+  height: 53px;
+  background-color: $background;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 15px 32px;
+
+  div h4 {
+    margin: 0;
+  }
+
+  div h2 {
+    margin: 0;
+  }
+}
+
+.result-card-user-info {
+  margin-top: 37px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: $tertiary;
+  text-align: left;
+  row-gap: 10px;
+
+  .icon-text-container {
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+  }
+
+  .result-card-user-info-column {
+    display: grid;
+    grid-row-gap: 19px;
+  }
+}
