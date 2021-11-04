@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SearchBar.scss";
 
-const SearchBar = () => {
+const SearchBar = ({ onSubmit }) => {
+  const [term, setTerm] = useState("");
+
+  const onSubmitForm = (event) => {
+    event.preventDefault();
+    onSubmit(term);
+  };
+
   return (
-    <form className="search-input" onSubmit={() => console.log("submit")}>
+    <form className="search-input" onSubmit={onSubmitForm}>
       <img src={`${process.env.PUBLIC_URL}/icon-search.svg`} />
-      <input placeholder="Search GitHub username..." />
+      <input
+        type="text"
+        value={term}
+        onChange={(e) => setTerm(e.target.value)}
+        placeholder="Search GitHub username..."
+      />
       <button>Search</button>
     </form>
   );
