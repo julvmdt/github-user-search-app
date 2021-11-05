@@ -1,19 +1,31 @@
-# TODO:
+# GitHub User Search App
 
-# - UI
+An App to pull the GitHub profile user data with usage of GitHub users API.
 
-# API call
+## Functionalities
 
-# Theming
+- Search for GitHub users by their username
+- Shows relevant user information based on the search
+- Switch between light and dark themes
 
-# Tests
+## Build with
 
-# Read me
+- React
+- Sass
 
-# Deployment
+## Available Scripts
 
-# Check the performance
+In the project directory, you can run:
 
-# add prettier
+### npm install
 
-# global font
+To install node modules
+
+### `npm start`
+
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+### `npm run test`
+
+To run the tests
