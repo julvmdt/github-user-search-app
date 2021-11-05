@@ -6,8 +6,11 @@
   margin: 24px auto 145px auto;
   padding: 48px;
   border-radius: 15px;
-  background-color: $background-light;
-  box-shadow: 0px 16px 30px $shadow;
+
+  @include theme() {
+    background-color: theme-get("background-light");
+    box-shadow: theme-get("box-shadow");
+  }
 }
 
 .result-card-content-container {
@@ -31,16 +34,10 @@
   justify-content: space-between;
 
   .result-card-date-title {
-    color: $secondary;
+    @include theme() {
+      color: theme-get("secondary");
+    }
   }
-}
-
-h3 {
-  color: $primary;
-}
-
-p {
-  color: $tertiary;
 }
 
 .result-card-text-alignment {
@@ -50,11 +47,14 @@ p {
 .result-card-github-info-container {
   width: 448px;
   height: 53px;
-  background-color: $background;
   border-radius: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   padding: 15px 32px;
+
+  @include theme() {
+    background-color: theme-get("background");
+  }
 
   div h4 {
     margin: 0;
@@ -69,9 +69,12 @@ p {
   margin-top: 37px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  color: $tertiary;
   text-align: left;
   row-gap: 10px;
+
+  @include theme() {
+    color: theme-get("tertiary");
+  }
 
   .icon-text-container {
     display: grid;

@@ -28,8 +28,10 @@ const ResultCard = ({ userInfo }) => {
               Joined {formatDate(userInfo.created_at)}
             </span>
           </div>
-          <h3 className="result-card-text-alignment">@{userInfo.login}</h3>
-          <p className="result-card-text-alignment">
+          <h3 className="primary result-card-text-alignment">
+            @{userInfo.login}
+          </h3>
+          <p className="tertiary result-card-text-alignment">
             {userInfo.bio ?? "This profile has no bio"}
           </p>
           <div className="result-card-github-info-container">

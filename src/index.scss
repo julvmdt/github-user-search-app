@@ -1,50 +1,88 @@
-// colors light theme
-$primary: #0079ff;
-$primary-light: #60abff;
-$secondary: #697c9a;
-$tertiary: #4b6a9b;
-$contrast: #2b3442;
+$themes: (
+  dark: (
+    "primary": #0079ff,
+    "primary-light": #60abff,
+    "secondary": #697c9a,
+    "tertiary": #4b6a9b,
+    "background": #141d2f,
+    "background-light": #1e2a47,
+    "font-color": #ffffff,
+    "box-shadow": unset,
+    "white": #ffffff
+  ),
+  light: (
+    "primary": #0079ff,
+    "primary-light": #60abff,
+    "secondary": #697c9a,
+    "tertiary": #4b6a9b,
+    "background": #f6f8ff,
+    "background-light": #fefefe,
+    "font-color": #222731,
+    "box-shadow": 0px 16px 30px #4660bb33,
+    "white": #ffffff
+  ),
+);
 
-$background: #f6f8ff;
-$background-light: #fefefe;
+$theme-map: null;
 
-$shadow: #4660bb33;
+@mixin theme() {
+  @each $theme, $map in $themes {
+    $theme-map: $map !global;
+    .#{$theme} & {
+      @content;
+    }
+  }
+  $theme-map: null !global;
+}
 
-// colors dark theme
-.dark {
-  $primary: #0079ff;
-  $secondary: #ffffff;
-  $tertiary: #141d2f;
-  $contrast: #1e2a47;
-
-  $background: #f6f8ff;
-  $background-light: #fefefe;
+@function theme-get($key) {
+  @return map-get($theme-map, $key);
 }
 
 // fonts
 h1 {
   font: bold 26px "Space Mono", monospace;
   line-height: 38px;
+
+  @include theme() {
+    color: theme-get("font-color");
+  }
 }
 
 h2 {
   font: bold 22px "Space Mono", monospace;
   line-height: 33px;
+
+  @include theme() {
+    color: theme-get("font-color");
+  }
 }
 
 h3 {
   font: 16px "Space Mono", monospace;
   line-height: 24px;
+
+  @include theme() {
+    color: theme-get("font-color");
+  }
 }
 
 h4 {
   font: 13px "Space Mono", monospace;
   line-height: 20px;
+
+  @include theme() {
+    color: theme-get("font-color");
+  }
 }
 
 .h4-bold {
   font: bold 13px "Space Mono", monospace;
   line-height: 20px;
+
+  @include theme() {
+    color: theme-get("font-color");
+  }
 }
 
 button {
@@ -52,10 +90,21 @@ button {
   line-height: 24px;
 }
 
+.primary {
+  @include theme() {
+    color: theme-get("primary");
+  }
+}
+
+.tertiary {
+  @include theme() {
+    color: theme-get("tertiary");
+  }
+}
+
 body {
   margin: 0px auto;
   text-align: center;
-  background-color: $background;
   font: 15px "Space Mono", monospace;
   line-height: 25px;
 }
