@@ -6,9 +6,11 @@
     box-shadow: theme-get("box-shadow");
   }
 
-  margin: auto;
+  @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 1) {
+    padding: 7px;
+    grid-template-columns: 20px 1fr 85px;
+  }
 
-  width: 708px;
   height: 47px;
   padding: 22px;
   border-radius: 15px;
@@ -32,6 +34,10 @@
     }
   }
 
+  input::placeholder {
+    font-size: 13px;
+  }
+
   input:focus {
     outline-width: 0;
   }
@@ -42,7 +48,6 @@
   }
 
   button {
-    width: 106px;
     height: 50px;
     border: 0;
     border-radius: 10px;
@@ -58,5 +63,10 @@
     @include theme() {
       background-color: theme-get("primary-light");
     }
+  }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+    margin: 0px 98px;
+    width: auto;
   }
 }

@@ -21,16 +21,18 @@ const ResultCard = ({ userInfo }) => {
         <div className="result-card-avatar">
           <img src={userInfo.avatar_url} />
         </div>
-        <div>
-          <div className="result-card-title-container">
-            <h1>{userInfo.name ?? userInfo.login}</h1>
-            <span className="result-card-date-title">
-              Joined {formatDate(userInfo.created_at)}
-            </span>
+        <div className="result-card-title-header">
+          <div class="result-card-title-container">
+            <h1 className="result-card-title-h1">{userInfo.name ?? userInfo.login}</h1>
+            <h3 className="primary result-card-text-alignment">
+              @{userInfo.login}
+            </h3>
           </div>
-          <h3 className="primary result-card-text-alignment">
-            @{userInfo.login}
-          </h3>
+          <span className="result-card-date-title">
+            Joined {formatDate(userInfo.created_at)}
+          </span>
+        </div>
+        <div className="result-card-content">
           <p className="tertiary result-card-text-alignment">
             {userInfo.bio ?? "This profile has no bio"}
           </p>
