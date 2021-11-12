@@ -22,8 +22,10 @@ const ResultCard = ({ userInfo }) => {
           <img src={userInfo.avatar_url} />
         </div>
         <div className="result-card-title-header">
-          <div class="result-card-title-container">
-            <h1 className="result-card-title-h1">{userInfo.name ?? userInfo.login}</h1>
+          <div className="result-card-title-container">
+            <h1 className="result-card-title-h1">
+              {userInfo.name ?? userInfo.login}
+            </h1>
             <h3 className="primary result-card-text-alignment">
               @{userInfo.login}
             </h3>
