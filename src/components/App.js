@@ -7,6 +7,7 @@ import "./App.scss";
 const App = () => {
   const [userInfo, setUserInfo] = useState(null);
   const [theme, setTheme] = useState("light");
+  const [hasResult, setHasResult] = useState(null);
 
   const isDark = theme === "dark";
   const isLight = theme === "light";
@@ -20,11 +21,14 @@ const App = () => {
   };
 
   const onSearchSubmit = async (term) => {
-    const response = await gihub.get(`/users/${term}`);
-    if (!response.data) {
-      return;
+    try {
+      const response = await gihub.get(`/users/${term}`);
+      setHasResult(true);
+      setUserInfo(response.data);
+    } catch (e) {
+      setHasResult(false);
+      setUserInfo(null);
     }
-    setUserInfo(response.data);
   };
 
   useEffect(() => {
@@ -49,7 +53,7 @@ const App = () => {
           />
         </div>
       </div>
-      <SearchBar onSubmit={onSearchSubmit} />
+      <SearchBar hasResult={hasResult} onSubmit={onSearchSubmit} />
       <ResultCard userInfo={userInfo} />
     </>
   );

@@ -35,7 +35,7 @@ const ResultCard = ({ userInfo }) => {
           </span>
         </div>
         <div className="result-card-content">
-          <p className="tertiary result-card-text-alignment">
+          <p className="tertiary-dark-mode result-card-text-alignment">
             {userInfo.bio ?? "This profile has no bio"}
           </p>
           <div className="result-card-github-info-container">

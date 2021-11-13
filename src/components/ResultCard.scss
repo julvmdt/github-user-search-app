@@ -87,7 +87,7 @@
 
   .result-card-date-title {
     @include theme() {
-      color: theme-get("secondary");
+      color: theme-get("secondary-dark-mode");
     }
 
     @media only screen and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
@@ -139,7 +139,7 @@
   }
 
   @include theme() {
-    color: theme-get("tertiary");
+    color: theme-get("tertiary-dark-mode");
   }
 
   .icon-text-container {
