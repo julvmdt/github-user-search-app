@@ -58,13 +58,13 @@ const ResultCard = ({ userInfo }) => {
                 <div>
                   <img src={`${process.env.PUBLIC_URL}/icon-location.svg`} />
                 </div>
-                <div>{checkIfAvailable(userInfo.location)}</div>
+                <span>{checkIfAvailable(userInfo.location)}</span>
               </div>
               <div className="icon-text-container">
                 <div>
                   <img src={`${process.env.PUBLIC_URL}/icon-company.svg`} />
                 </div>
-                <div>{checkIfAvailable(userInfo.company)}</div>
+                <span>{checkIfAvailable(userInfo.company)}</span>
               </div>
             </div>
             <div className="result-card-user-info-column">
@@ -72,13 +72,13 @@ const ResultCard = ({ userInfo }) => {
                 <div>
                   <img src={`${process.env.PUBLIC_URL}/icon-twitter.svg`} />
                 </div>
-                <div>{checkIfAvailable(userInfo.twitter_username)}</div>
+                <span>{checkIfAvailable(userInfo.twitter_username)}</span>
               </div>
               <div className="icon-text-container">
                 <div>
                   <img src={`${process.env.PUBLIC_URL}/icon-website.svg`} />
                 </div>
-                <div>{checkIfAvailable(userInfo.blog)}</div>
+                <span>{checkIfAvailable(userInfo.blog)}</span>
               </div>
             </div>
           </div>

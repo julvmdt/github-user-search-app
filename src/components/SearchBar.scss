@@ -40,6 +40,12 @@
     justify-content: space-between;
     width: 100%;
     align-items: center;
+
+    @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 1) {
+      display: grid;
+      grid-template-columns: 100px 50px;
+      margin-right: 8px;
+    }
   }
 
   .search-input-no-results {

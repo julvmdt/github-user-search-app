@@ -1,13 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./SearchBar.scss";
 
 const SearchBar = ({ onSubmit, hasResult }) => {
+  const mediaQuery = window.matchMedia("(max-device-width: 480px)");
+
   const [term, setTerm] = useState("");
+  const [placeholder, setPlaceholder] = useState(
+    mediaQuery.matches ? "Search..." : "Search GitHub username..."
+  );
 
   const onSubmitForm = (event) => {
     event.preventDefault();
     onSubmit(term);
   };
+
+  useEffect(() => {
+    const listener = (e) => {
+      setPlaceholder(e.matches ? "Search..." : "Search GitHub username...");
+    };
+    mediaQuery.addEventListener("change", listener);
+
+    return () => {
+      mediaQuery.removeEventListener("change", listener);
+    };
+  }, []);
 
   return (
     <form className="search-input-container" onSubmit={onSubmitForm}>
@@ -17,10 +33,10 @@ const SearchBar = ({ onSubmit, hasResult }) => {
           type="text"
           value={term}
           onChange={(e) => setTerm(e.target.value)}
-          placeholder="Search GitHub username..."
+          placeholder={placeholder}
         />
         {hasResult !== null && !hasResult && (
-          <div className="search-input-no-results">No results</div>
+          <span className="search-input-no-results">No results</span>
         )}
       </div>
       <button>Search</button>
