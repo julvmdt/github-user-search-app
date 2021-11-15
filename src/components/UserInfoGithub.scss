@@ -1,0 +1,25 @@
+@import "../index.scss";
+
+.user-info-github-container {
+  height: 53px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 15px 32px;
+
+  @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 1) {
+    padding: 14px;
+  }
+
+  @include theme() {
+    background-color: theme-get("background");
+  }
+
+  div h4 {
+    margin: 0;
+  }
+
+  div h2 {
+    margin: 0;
+  }
+}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import SearchBar from "./SearchBar";
-import ResultCard from "./ResultCard";
-import gihub from "../api/github";
+import SearchBar from "./components/SearchBar";
+import ResultCard from "./components/ResultCard";
+import gihub from "./api/github";
 import "./App.scss";
 
 const App = () => {

@@ -1,6 +1,8 @@
 import moment from "moment";
 import React from "react";
 import "./ResultCard.scss";
+import UserInfo from "./UserInfo";
+import UserInfoGithub from "./UserInfoGithub";
 
 const ResultCard = ({ userInfo }) => {
   if (!userInfo) {
@@ -9,10 +11,6 @@ const ResultCard = ({ userInfo }) => {
 
   const formatDate = (value) => {
     return moment(value).format("DD MMMM YYYY");
-  };
-
-  const checkIfAvailable = (info) => {
-    return info ? info : "Not Available";
   };
 
   return (
@@ -38,50 +36,8 @@ const ResultCard = ({ userInfo }) => {
           <p className="tertiary-dark-mode result-card-text-alignment">
             {userInfo.bio ?? "This profile has no bio"}
           </p>
-          <div className="result-card-github-info-container">
-            <div>
-              <h4>Repos</h4>
-              <h2>{userInfo.public_repos}</h2>
-            </div>
-            <div>
-              <h4>Followers</h4>
-              <h2>{userInfo.followers}</h2>
-            </div>
-            <div>
-              <h4>Following</h4>
-              <h2>{userInfo.following}</h2>
-            </div>
-          </div>
-          <div className="result-card-user-info">
-            <div className="result-card-user-info-column">
-              <div className="icon-text-container">
-                <div>
-                  <img src={`${process.env.PUBLIC_URL}/icon-location.svg`} />
-                </div>
-                <span>{checkIfAvailable(userInfo.location)}</span>
-              </div>
-              <div className="icon-text-container">
-                <div>
-                  <img src={`${process.env.PUBLIC_URL}/icon-company.svg`} />
-                </div>
-                <span>{checkIfAvailable(userInfo.company)}</span>
-              </div>
-            </div>
-            <div className="result-card-user-info-column">
-              <div className="icon-text-container">
-                <div>
-                  <img src={`${process.env.PUBLIC_URL}/icon-twitter.svg`} />
-                </div>
-                <span>{checkIfAvailable(userInfo.twitter_username)}</span>
-              </div>
-              <div className="icon-text-container">
-                <div>
-                  <img src={`${process.env.PUBLIC_URL}/icon-website.svg`} />
-                </div>
-                <span>{checkIfAvailable(userInfo.blog)}</span>
-              </div>
-            </div>
-          </div>
+          <UserInfoGithub userInfo={userInfo} />
+          <UserInfo userInfo={userInfo} />
         </div>
       </div>
     </div>

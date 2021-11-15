@@ -1,0 +1,32 @@
+@import "../index.scss";
+
+.user-info-container {
+  margin-top: 37px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: left;
+  row-gap: 10px;
+
+  @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 1) {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+  }
+
+  @include theme() {
+    color: theme-get("tertiary-dark-mode");
+  }
+
+  .user-info-icon-text-container {
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+  }
+
+  .user-info-column {
+    display: grid;
+    grid-row-gap: 19px;
+
+    @media only screen and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+      grid-row-gap: 16px;
+    }
+  }
+}
