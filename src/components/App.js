@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import SearchBar from "./components/SearchBar";
-import ResultCard from "./components/ResultCard";
-import gihub from "./api/github";
+import SearchBar from "./SearchBar/SearchBar";
+import ResultCard from "./ResultCard/ResultCard";
+import ThemeToggle from "./ThemeToggle/ThemeToggle";
+import gihub from "../api/github";
 import "./App.scss";
 
 const App = () => {
@@ -41,17 +42,7 @@ const App = () => {
       <div className="background"></div>
       <div className="app-title-container">
         <h1>devfinder</h1>
-        <div className="app-toggle-container">
-          <h4 className="h4-bold">
-            {(isDark ? "light" : "dark").toUpperCase()}
-          </h4>
-          <img
-            onClick={toggleTheme}
-            src={`${process.env.PUBLIC_URL}/icon-${
-              isDark ? "sun" : "moon"
-            }.svg`}
-          />
-        </div>
+        <ThemeToggle toggleTheme={toggleTheme} theme={theme} />
       </div>
       <SearchBar hasResult={hasResult} onSubmit={onSearchSubmit} />
       <ResultCard userInfo={userInfo} />

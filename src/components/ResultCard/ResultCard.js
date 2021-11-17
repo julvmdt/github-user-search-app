@@ -1,8 +1,8 @@
 import moment from "moment";
 import React from "react";
+import UserInfo from "./UserInfo/UserInfo";
+import UserInfoGithub from "./UserInfoGithub/UserInfoGithub";
 import "./ResultCard.scss";
-import UserInfo from "./UserInfo";
-import UserInfoGithub from "./UserInfoGithub";
 
 const ResultCard = ({ userInfo }) => {
   if (!userInfo) {

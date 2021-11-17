@@ -1,4 +1,4 @@
-@import "./index.scss";
+@import "../index.scss";
 
 #root {
   width: 730px;
@@ -47,15 +47,4 @@
   }
 }
 
-.app-toggle-container {
-  display: grid;
-  grid-template-columns: 15fr 1fr;
-  align-items: center;
-  column-gap: 12px;
 
-  img:hover {
-    cursor: pointer;
-    filter: invert(73%) sepia(11%) saturate(1218%) hue-rotate(186deg)
-      brightness(89%) contrast(84%);
-  }
-}
