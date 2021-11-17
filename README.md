@@ -11,6 +11,7 @@ An App to pull the GitHub profile user data with usage of GitHub users API.
 ## Build with
 
 - React
+- React Hooks
 - Sass
 
 ## Available Scripts
