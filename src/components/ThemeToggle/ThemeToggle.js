@@ -12,6 +12,7 @@ const ThemeToggle = ({ toggleTheme, theme }) => {
         src={`${process.env.PUBLIC_URL}/icon-${
           theme === "dark" ? "sun" : "moon"
         }.svg`}
+        alt="theme"
         data-testid="toggle"
       />
     </div>

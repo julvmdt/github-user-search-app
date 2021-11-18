@@ -1,39 +1,36 @@
 import React from "react";
-import { render, unmountComponentAtNode } from "react-dom";
-import { act } from "react-dom/test-utils";
+import { render, screen } from "@testing-library/react";
+import UserEvent from "@testing-library/user-event";
 
 import ThemeToggle from "./ThemeToggle";
 
-let container = null;
-beforeEach(() => {
-  container = document.createElement("div");
-  document.body.appendChild(container);
-});
-
-afterEach(() => {
-  unmountComponentAtNode(container);
-  container.remove();
-  container = null;
-});
-
-it("changes theme label when clicked", () => {
-  const toggleTheme = jest.fn();
-  act(() => {
-    render(
-      <ThemeToggle toggleTheme={toggleTheme} theme={"light"} />,
-      container
+describe("Testing ToggleTheme Component", () => {
+  test("theme label change when clicked", () => {
+    const toggleTheme = jest.fn();
+    const { rerender } = render(
+      <ThemeToggle toggleTheme={toggleTheme} theme={"light"} />
     );
+
+    const toggle = screen.getByTestId("toggle");
+    const label = screen.getByTestId("label");
+
+    UserEvent.click(toggle);
+    rerender(<ThemeToggle toggleTheme={toggleTheme} theme={"dark"} />);
+    expect(label.textContent).toBe("DARK");
+    expect(toggleTheme).toHaveBeenCalledTimes(1);
   });
-  const onToggleButton = container.querySelector("[data-testid=toggle]");
-  const label = container.querySelector("[data-testid=label]");
 
-  expect(label.textContent).toBe("LIGHT");
+  test("icon change when clicked", () => {
+    const toggleTheme = jest.fn();
+    const { rerender } = render(
+      <ThemeToggle toggleTheme={toggleTheme} theme={"light"} />
+    );
 
-  act(() => {
-    onToggleButton.dispatchEvent(new MouseEvent("click", { bubbles: true }));
-    render(<ThemeToggle toggleTheme={toggleTheme} theme={"dark"} />, container);
+    const toggleImg = screen.getByTestId("toggle");
+
+    UserEvent.click(toggleImg);
+    rerender(<ThemeToggle toggleTheme={toggleTheme} theme={"dark"} />);
+
+    expect(toggleImg.src).toContain("http://localhost/icon-sun.svg");
   });
-
-  expect(label.textContent).toBe("DARK");
-  expect(toggleTheme).toHaveBeenCalledTimes(1);
 });
