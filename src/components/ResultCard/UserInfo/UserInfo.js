@@ -13,13 +13,17 @@ const UserInfo = ({ userInfo }) => {
           <div>
             <img src={`${process.env.PUBLIC_URL}/icon-location.svg`} />
           </div>
-          <span>{checkIfAvailable(userInfo.location)}</span>
+          <span data-testid="location">
+            {checkIfAvailable(userInfo.location)}
+          </span>
         </div>
         <div className="user-info-icon-text-container">
           <div>
             <img src={`${process.env.PUBLIC_URL}/icon-company.svg`} />
           </div>
-          <span>{checkIfAvailable(userInfo.company)}</span>
+          <span data-testid="company">
+            {checkIfAvailable(userInfo.company)}
+          </span>
         </div>
       </div>
       <div className="user-info-column">
@@ -27,13 +31,15 @@ const UserInfo = ({ userInfo }) => {
           <div>
             <img src={`${process.env.PUBLIC_URL}/icon-twitter.svg`} />
           </div>
-          <span>{checkIfAvailable(userInfo.twitter_username)}</span>
+          <span data-testid="twitter-username">
+            {checkIfAvailable(userInfo.twitter_username)}
+          </span>
         </div>
         <div className="user-info-icon-text-container">
           <div>
             <img src={`${process.env.PUBLIC_URL}/icon-website.svg`} />
           </div>
-          <span>{checkIfAvailable(userInfo.blog)}</span>
+          <span data-testid="blog">{checkIfAvailable(userInfo.blog)}</span>
         </div>
       </div>
     </div>
