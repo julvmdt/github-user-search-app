@@ -34,9 +34,12 @@ const SearchBar = ({ onSubmit, hasResult }) => {
           value={term}
           onChange={(e) => setTerm(e.target.value)}
           placeholder={placeholder}
+          data-testid="search-input"
         />
         {hasResult !== null && !hasResult && (
-          <span className="search-input-no-results">No results</span>
+          <span className="search-input-no-results" data-testid="no-results">
+            No results
+          </span>
         )}
       </div>
       <button>Search</button>
