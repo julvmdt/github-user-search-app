@@ -6,8 +6,6 @@ import SearchBar from "./SearchBar";
 import "../../utils/__mocks__/matchMedia";
 
 describe("Testing SearchBar component", () => {
-  beforeAll(() => {});
-
   test("term value is updated correctly", () => {
     const onSubmit = jest.fn();
     render(<SearchBar onSubmit={onSubmit} hasResult={true} />);

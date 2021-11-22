@@ -14,7 +14,7 @@ const ResultCard = ({ userInfo }) => {
   };
 
   return (
-    <div className="result-card-container">
+    <div className="result-card-container" data-testid="result-card-container">
       <div className="result-card-content-container">
         <div className="result-card-avatar">
           <img src={userInfo.avatar_url} data-testid="avatar" />

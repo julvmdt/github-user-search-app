@@ -1,0 +1,16 @@
+export const response = {
+  avatar_url: "https://avatars-url.com",
+  bio: null,
+  blog: "https://github.blog",
+  company: "@github",
+  created_at: "2012-01-20T18:44:36Z",
+  email: null,
+  followers: 400,
+  following: 9,
+  id: 124,
+  location: "San Francisco",
+  login: "octocat",
+  name: "The Octocat",
+  repos_url: "https://github-repo.com",
+  twitter_username: null,
+};

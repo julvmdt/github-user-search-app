@@ -42,7 +42,7 @@ const SearchBar = ({ onSubmit, hasResult }) => {
           </span>
         )}
       </div>
-      <button>Search</button>
+      <button data-testid="search-bar-button">Search</button>
     </form>
   );
 };
