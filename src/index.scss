@@ -1,3 +1,4 @@
+// theming
 $themes: (
   dark: (
     "primary": #0079ff,
@@ -45,6 +46,30 @@ $theme-map: null;
   @return map-get($theme-map, $key);
 }
 
+// media queries
+
+$phone-width: 480px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin phone {
+  @media only screen and (max-device-width: #{$phone-width}) and (-webkit-min-device-pixel-ratio: 1) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media only screen and (min-device-width: #{$tablet-width}) and (max-device-width: #{$desktop-width}) and (-webkit-min-device-pixel-ratio: 1) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (max-device-width: #{$desktop-width}) and (-webkit-min-device-pixel-ratio: 1) {
+    @content;
+  }
+}
+
 // fonts
 h1 {
   font: bold 26px "Space Mono", monospace;
@@ -54,7 +79,7 @@ h1 {
     color: theme-get("font-color");
   }
 
-  @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 1) {
+  @include phone {
     font-size: 16px;
   }
 }
@@ -67,7 +92,7 @@ h2 {
     color: theme-get("font-color");
   }
 
-  @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 1) {
+  @include phone {
     font-size: 16px;
   }
 }
@@ -80,7 +105,7 @@ h3 {
     color: theme-get("font-color");
   }
 
-  @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 1) {
+  @include phone {
     font-size: 13px;
   }
 }
@@ -93,7 +118,7 @@ h4 {
     color: theme-get("font-color");
   }
 
-  @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 1) {
+  @include phone {
     font-size: 11px;
   }
 }
@@ -111,7 +136,7 @@ p {
   font: 15px "Space Mono", monospace;
   line-height: 22px;
 
-  @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 1) {
+  @include phone {
     font-size: 13px;
     line-height: 20px;
   }
@@ -121,7 +146,7 @@ span {
   font: 15px "Space Mono", monospace;
   line-height: 22px;
 
-  @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 1) {
+  @include phone {
     font-size: 13px;
     line-height: 20px;
   }
@@ -131,7 +156,7 @@ button {
   font: bold 16px "Space Mono", monospace;
   line-height: 24px;
 
-  @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 1) {
+  @include phone {
     font-size: 13px;
     line-height: 20px;
   }

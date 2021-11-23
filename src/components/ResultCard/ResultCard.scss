@@ -10,12 +10,12 @@
     box-shadow: theme-get("box-shadow");
   }
 
-  @media only screen and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  @include desktop {
     width: auto;
     margin: 24px 98px;
   }
 
-  @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 1) {
+  @include phone {
     margin: 24px 0;
     padding: 24px;
   }
@@ -27,12 +27,12 @@
   grid-template-rows: 20% 20% 20% 20% 20%;
   column-gap: 37px;
 
-  @media only screen and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  @include desktop {
     column-gap: 40px;
     grid-template-rows: auto;
   }
 
-  @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 1) {
+  @include phone {
     column-gap: 20px;
   }
 }
@@ -40,7 +40,7 @@
 .result-card-content {
   grid-column: 2;
 
-  @media only screen and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  @include desktop {
     grid-column: 1 / span 2;
   }
 }
@@ -48,7 +48,7 @@
 .result-card-avatar {
   grid-row: 1 / span 5;
 
-  @media only screen and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  @include desktop {
     grid-row: auto;
   }
 
@@ -57,7 +57,7 @@
     height: 117px;
     border-radius: 50%;
 
-    @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 1) {
+    @include phone {
       width: 70px;
       height: 70px;
     }
@@ -69,7 +69,7 @@
   grid-template-columns: 1fr 1fr;
   justify-content: space-between;
 
-  @media only screen and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  @include desktop {
     grid-template-columns: 1fr;
     grid-template-rows: 70px 40px;
   }
@@ -90,7 +90,7 @@
       color: theme-get("secondary-dark-mode");
     }
 
-    @media only screen and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+    @include desktop {
       text-align: start;
     }
   }

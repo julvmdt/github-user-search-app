@@ -6,7 +6,7 @@
     box-shadow: theme-get("box-shadow");
   }
 
-  @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 1) {
+  @include phone {
     padding: 7px;
     grid-template-columns: 20px 1fr 85px;
   }
@@ -41,7 +41,7 @@
     width: 100%;
     align-items: center;
 
-    @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 1) {
+    @include phone {
       display: grid;
       grid-template-columns: 100px 50px;
       margin-right: 8px;
@@ -50,6 +50,7 @@
 
   .search-input-no-results {
     font-weight: bold;
+
     @include theme() {
       color: theme-get("red");
     }
@@ -59,7 +60,7 @@
     font: 18px "Space Mono", monospace;
     line-height: 25px;
 
-    @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 1) {
+    @include phone {
       font: 13px "Space Mono", monospace;
       line-height: 25px;
     }
@@ -73,7 +74,7 @@
     font: 18px "Space Mono", monospace;
     line-height: 25px;
 
-    @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 1) {
+    @include phone {
       font: 13px "Space Mono", monospace;
       line-height: 25px;
     }
@@ -92,12 +93,13 @@
 
   button:hover {
     cursor: pointer;
+
     @include theme() {
       background-color: theme-get("primary-light");
     }
   }
 
-  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+  @include tablet {
     margin: 0px 98px;
     width: auto;
   }
