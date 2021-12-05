@@ -35,7 +35,7 @@ const App = () => {
   useEffect(() => {
     document.body.classList.toggle("dark", isDark);
     document.body.classList.toggle("light", isLight);
-  }, [theme]);
+  }, [theme, isDark, isLight]);
 
   return (
     <>

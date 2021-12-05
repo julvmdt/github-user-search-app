@@ -11,7 +11,10 @@ const UserInfo = ({ userInfo }) => {
       <div className="user-info-column">
         <div className="user-info-icon-text-container">
           <div>
-            <img src={`${process.env.PUBLIC_URL}/icon-location.svg`} />
+            <img
+              src={`${process.env.PUBLIC_URL}/icon-location.svg`}
+              alt={"location"}
+            />
           </div>
           <span data-testid="location">
             {checkIfAvailable(userInfo.location)}
@@ -19,7 +22,10 @@ const UserInfo = ({ userInfo }) => {
         </div>
         <div className="user-info-icon-text-container">
           <div>
-            <img src={`${process.env.PUBLIC_URL}/icon-company.svg`} />
+            <img
+              src={`${process.env.PUBLIC_URL}/icon-company.svg`}
+              alt={"company"}
+            />
           </div>
           <span data-testid="company">
             {checkIfAvailable(userInfo.company)}
@@ -29,7 +35,10 @@ const UserInfo = ({ userInfo }) => {
       <div className="user-info-column">
         <div className="user-info-icon-text-container">
           <div>
-            <img src={`${process.env.PUBLIC_URL}/icon-twitter.svg`} />
+            <img
+              src={`${process.env.PUBLIC_URL}/icon-twitter.svg`}
+              alt={"twitter"}
+            />
           </div>
           <span data-testid="twitter-username">
             {checkIfAvailable(userInfo.twitter_username)}
@@ -37,7 +46,10 @@ const UserInfo = ({ userInfo }) => {
         </div>
         <div className="user-info-icon-text-container">
           <div>
-            <img src={`${process.env.PUBLIC_URL}/icon-website.svg`} />
+            <img
+              src={`${process.env.PUBLIC_URL}/icon-website.svg`}
+              alt={"website"}
+            />
           </div>
           <span data-testid="blog">{checkIfAvailable(userInfo.blog)}</span>
         </div>

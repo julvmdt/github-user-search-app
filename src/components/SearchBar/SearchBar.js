@@ -23,11 +23,11 @@ const SearchBar = ({ onSubmit, hasResult }) => {
     return () => {
       mediaQuery.removeEventListener("change", listener);
     };
-  }, []);
+  }, [mediaQuery]);
 
   return (
     <form className="search-input-container" onSubmit={onSubmitForm}>
-      <img src={`${process.env.PUBLIC_URL}/icon-search.svg`} />
+      <img src={`${process.env.PUBLIC_URL}/icon-search.svg`} alt={"search"} />
       <div className="search-input">
         <input
           type="text"
