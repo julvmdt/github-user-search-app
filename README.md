@@ -8,6 +8,10 @@ An App to pull the GitHub profile user data with usage of GitHub users API.
 - Shows relevant user information based on the search
 - Switch between light and dark themes
 
+## Live URL
+
+[GitHub User Search App](https://github-user-search-app-six.vercel.app/)
+
 ## Build with
 
 - React
